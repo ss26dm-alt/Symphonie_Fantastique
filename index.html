@@ -284,9 +284,10 @@ function renderHome(){
       <button class="btn ghost" data-go="toc"><span>標準版の目次<small>章を選んで読む</small></span>${ICON.next}</button>
     </div>
     <div class="note">
+      <p>音声再生機能があります。電車内等ではイヤホンを使用するなど周囲への配慮をお願いいたします。</p>
+      <p>再生前には音量を控えめにするなど大音量にご注意ください。</p>
       <p>音を出せない場所でも、文章だけで物語を追えます。</p>
-      <p>電車内等ではイヤホンを使用するなど周囲への配慮をお願いいたします。再生前には音量を控えめにするなど大音量にご注意ください。</p>
-      <p>進み具合は、この端末の中だけに保存されます。</p>
+      <p>一度開いた端末では、ネットワークがつながらない場所でも引き続きご利用いただけます（但し、長い間開かなかった場合は再読み込みが必要な場合があります）。ページの進み具合は、この端末の中だけに保存されます。</p>
     </div>
     <p><button class="terms" data-terms="1">ご利用にあたって</button></p>
   </main>`;
@@ -488,12 +489,12 @@ function route(){
 }
 window.addEventListener("hashchange", ()=>{ route(); window.scrollTo(0,0); });
 document.getElementById("parentimg").src = EXTRA.kyoso3;
-document.getElementById("ver").textContent = "版：2026-11-22 08:44" + (TEST_CONCERT ? "　試験モード（本番時間帯として動作中）" : "");
+document.getElementById("ver").textContent = "版：2026-11-22 09:17" + (TEST_CONCERT ? "　試験モード（本番時間帯として動作中）" : "");
 route();
 
 /* ---------- オフラインと更新 ---------- */
 // 端末に保存した版をすぐ出し、裏で version.json を見て新しい版があれば知らせる。押すと切り替える。
-const APP_VER = "b84c8d7f0a";
+const APP_VER = "42f989d55e";
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
   navigator.serviceWorker.register("sw.js").catch(()=>{});
   setTimeout(checkUpdate, 1500);
